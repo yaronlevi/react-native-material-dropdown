@@ -224,7 +224,7 @@ export default class Dropdown extends PureComponent {
       let { opacity } = this.state;
 
       /* Adjust coordinates for relative layout in RTL locale */
-      if (I18nManager.isRTL && !absoluteRTLLayout) {
+      if (true) {
         x = dimensions.width - (x + containerWidth);
       }
 
@@ -442,8 +442,8 @@ export default class Dropdown extends PureComponent {
       return renderBase({ ...props, label, value, renderAccessory });
     }
 
-    let title = null == label || 'string' === typeof label?
-      label:
+    let title = null == label || 'string' === typeof label ?
+      label :
       String(label);
 
     return (
@@ -542,14 +542,14 @@ export default class Dropdown extends PureComponent {
         let value = valueExtractor(item, index);
         let label = labelExtractor(item, index);
 
-        let title = null == label?
-          value:
+        let title = null == label ?
+          value :
           label;
 
-        let color = ~selected?
-          index === selected?
-            selectedItemColor:
-            itemColor:
+        let color = ~selected ?
+          index === selected ?
+            selectedItemColor :
+            itemColor :
           selectedItemColor;
 
         let style = { color, fontSize };
@@ -615,7 +615,7 @@ export default class Dropdown extends PureComponent {
     if (null == dropdownPosition) {
       switch (selected) {
         case -1:
-          translateY -= 1 === itemCount? 0 : itemSize;
+          translateY -= 1 === itemCount ? 0 : itemSize;
           break;
 
         case 0:
